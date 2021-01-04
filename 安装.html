@@ -273,12 +273,12 @@
 <p>&#x5047;&#x8BBE;&#x4F60;&#x7684;lumapi&#x5B89;&#x88C5;&#x5728;c&#x76D8;&#xFF0C;miniconda&#x4E2D;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x53EB;&#x505A;fdtd&#xFF0C;&#x5E76;&#x5B89;&#x88C5;&#x5728;g&#x76D8;&#xFF0C;&#x90A3;&#x4E48;</p>
 <ol>
 <li>&#x5728;<code>G:\miniconda\envs\fdtd\Lib\site-packages</code>&#x8DEF;&#x5F84;&#x4E0B;&#x65B0;&#x5EFA;<code>lumapi.pth</code>&#x6587;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x4E3A;<code>C:\Program Files\Lumerical1\v202\api\python</code></li>
-<li>&#x5728;&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;fdtd&#xFF0C;&#x8F93;&#x5165;
-```
-import sys
-print(&apos;\n&apos;.join(sys.path))</li>
+<li>&#x5728;&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x6FC0;&#x6D3B;&#x865A;&#x62DF;&#x73AF;&#x5883;fdtd&#xFF0C;&#x8F93;&#x5165;</li>
 </ol>
-<p>G:\miniconda\envs\fdtd\python38.zip
+<pre><code>import sys
+print(&apos;\n&apos;.join(sys.path))
+
+G:\miniconda\envs\fdtd\python38.zip
 G:\miniconda\envs\fdtd\DLLs
 G:\miniconda\envs\fdtd\lib
 G:\miniconda\envs\fdtd
@@ -286,20 +286,17 @@ G:\miniconda\envs\fdtd\lib\site-packages
 G:\Program Files\Lumerical1\v202\api\python
 G:\miniconda\envs\fdtd\lib\site-packages\win32
 G:\miniconda\envs\fdtd\lib\site-packages\win32\lib
-G:\miniconda\envs\fdtd\lib\site-packages\Pythonwin</p>
-<pre><code>&#x5C31;&#x80FD;&#x591F;&#x770B;&#x5230;fdtd&#x8FD9;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DF2;&#x7ECF;&#x6210;&#x529F;&#x5C06;lumerical&#x7684;python&#x8DEF;&#x5F84;&#x5BFC;&#x5165;&#x4E86;&#x3002;
+G:\miniconda\envs\fdtd\lib\site-packages\Pythonwin
+</code></pre><p>&#x5C31;&#x80FD;&#x591F;&#x770B;&#x5230;fdtd&#x8FD9;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5DF2;&#x7ECF;&#x6210;&#x529F;&#x5C06;lumerical&#x7684;python&#x8DEF;&#x5F84;&#x5BFC;&#x5165;&#x4E86;&#x3002;</p>
+<h2 id="&#x7ED3;&#x5C3E;">&#x7ED3;&#x5C3E;</h2>
+<p>&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x5B89;&#x88C5;&#x5168;&#x90FD;&#x6CA1;&#x6709;&#x51FA;&#x95EE;&#x9898;&#xFF0C;&#x73B0;&#x5728;&#x5C31;&#x80FD;&#x591F;&#x5F00;&#x59CB;&#x4EFF;&#x771F;&#x4E86;&#x3002;</p>
+<p>&#x6253;&#x5F00;&#x4F60;&#x719F;&#x6089;&#x7684;py&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#xFF0C;&#x5C1D;&#x8BD5;&#x8F93;&#x5165;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#x5E76;&#x4FDD;&#x5B58;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x770B;&#x6548;&#x679C;&#x5427;&#xFF1A;</p>
+<pre><code>import lumapi
 
-
-## &#x7ED3;&#x5C3E;
-&#x5982;&#x679C;&#x4E0A;&#x8FF0;&#x5B89;&#x88C5;&#x5168;&#x90FD;&#x6CA1;&#x6709;&#x51FA;&#x95EE;&#x9898;&#xFF0C;&#x73B0;&#x5728;&#x5C31;&#x80FD;&#x591F;&#x5F00;&#x59CB;&#x4EFF;&#x771F;&#x4E86;&#x3002;
-
-&#x6253;&#x5F00;&#x4F60;&#x719F;&#x6089;&#x7684;py&#x7F16;&#x7A0B;&#x73AF;&#x5883;&#xFF0C;&#x5C1D;&#x8BD5;&#x8F93;&#x5165;&#x4E00;&#x4E0B;&#x4EE3;&#x7801;&#x5E76;&#x4FDD;&#x5B58;&#x8FD0;&#x884C;&#xFF0C;&#x770B;&#x770B;&#x6548;&#x679C;&#x5427;&#xFF1A;
-</code></pre><p>import lumapi</p>
-<p>mode = lumapi.MODE()
+mode = lumapi.MODE()
 mode.addrect(x=0, y=0.0, z=-1.11e-6,x_span=2e-5,y_span=1e-5,z_span=2e-6,name=&quot;box&quot;,material=&quot;SiO2 (Glass) - Palik&quot;)
 input()
-```</p>
-<p><strong>&#x6CE8;&#x610F;&#xFF01; lumapi&#x4F9D;&#x8D56;&#x4E8E;numpy&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x5BFC;&#x5165;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x53E6;&#x5916;&#x5B89;&#x88C5;numpy&#xFF01;</strong></p>
+</code></pre><p><strong>&#x6CE8;&#x610F;&#xFF01; lumapi&#x4F9D;&#x8D56;&#x4E8E;numpy&#x5E93;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x5BFC;&#x5165;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5728;&#x73AF;&#x5883;&#x4E2D;&#x53E6;&#x5916;&#x5B89;&#x88C5;numpy&#xFF01;</strong></p>
 <p>&#x63A5;&#x4E0B;&#x6765;&#x4F1A;&#x5199;&#x5982;&#x4F55;&#x4F7F;&#x7528;python api&#x5B8C;&#x5168;&#x4EE3;&#x66FF;&#x56FE;&#x5F62;&#x5316;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC;&#x591A;&#x7EBF;&#x7A0B;&#x3001;&#x4F1A;&#x8BDD;&#x7BA1;&#x7406;&#x8FD9;&#x4E9B;&#x3002;</p>
 
                                 
@@ -344,7 +341,7 @@ input()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安装:前言","level":"2.1","depth":1,"next":{"title":"lumerical","level":"2.1.1","depth":2,"anchor":"#lumerical","path":"安装.md","ref":"安装.md#lumerical","articles":[]},"previous":{"title":"前言","level":"1.2","depth":1,"path":"前言.md","ref":"前言.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git","katex@git+https://github.com/gaoxiaosong/plugin-katex.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Glider","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"安装.md","mtime":"2021-01-04T11:25:33.310Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-04T11:26:12.608Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"安装:前言","level":"2.1","depth":1,"next":{"title":"lumerical","level":"2.1.1","depth":2,"anchor":"#lumerical","path":"安装.md","ref":"安装.md#lumerical","articles":[]},"previous":{"title":"前言","level":"1.2","depth":1,"path":"前言.md","ref":"前言.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git","katex@git+https://github.com/gaoxiaosong/plugin-katex.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Glider","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"安装.md","mtime":"2021-01-04T11:34:39.047Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-04T11:35:28.536Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
