@@ -5,6 +5,13 @@ on:
   push:
     branches:
       - master  # trigger branch
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '手动触发'
+        required: true
+        default: 'Mona the Octocat'
+        
 jobs:
   build:
     runs-on: ubuntu-latest
