@@ -12,8 +12,7 @@
       "splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git",
       "chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git",
       "copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git",
-      "katex@git+https://github.com/gaoxiaosong/plugin-katex.git",
-      "summary@git+https://github.com/julianxhokaxhiu/gitbook-plugin-summary.git"
+      "katex@git+https://github.com/gaoxiaosong/plugin-katex.git"
   ],
   "pluginsConfig": {
   }
