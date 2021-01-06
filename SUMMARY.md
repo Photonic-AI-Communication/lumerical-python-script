@@ -15,12 +15,10 @@
 * [例程:简单的例子](例程.md#ladder)
   *  [发生了什么？](例程.md#what_happend)
 
-
+s
 ### 附录
 
 * [关于python中的包管理](附录.md#pipinstall)
   * [更换下载源](附录.md#change_source)
   * [包安装方式](附录.md#install)
-
-
 * [关于函数、方法的查询](附录.md#how2find)
