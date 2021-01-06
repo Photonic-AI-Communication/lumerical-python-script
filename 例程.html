@@ -69,7 +69,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="附录.html" />
+    <link rel="next" href="例程.html" />
     
     
     <link rel="prev" href="安装.html" />
@@ -225,6 +225,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="例程.html">
+            
+                <a href="例程.html#what_happend">
+            
+                    
+                    发生了什么？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -276,6 +295,26 @@
     
 
             </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="附录.html">
+            
+                <a href="附录.html#how2find">
+            
+                    
+                    关于函数、方法的查询
+            
+                </a>
+            
+
             
         </li>
     
@@ -425,6 +464,124 @@ if __name__ == &apos;__main__&apos;:
 <p>&#x5668;&#x4EF6;&#x7ED3;&#x6784;&#xFF1A;</p>
 <p><img src="pics/2021-01-06-16-01-34.png" alt=""></p>
 <p>&#x80FD;&#x591F;&#x770B;&#x5230;&#x6570;&#x636E;&#x6B63;&#x786E;&#x3002;</p>
+<hr>
+<h2 id="what_happend">&#x53D1;&#x751F;&#x4E86;&#x4EC0;&#x4E48;&#xFF1F;</h2>
+<p>&#x5982;&#x679C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x987A;&#x5229;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x80FD;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x9177;&#x70AB;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x522B;&#x614C;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x8BE6;&#x7EC6;&#x5206;&#x6790;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x903B;&#x8F91;</p>
+<pre><code>if __name__ == &apos;__main__&apos;: #&#x8FD9;&#x91CC;&#x662F;&#x7A0B;&#x5E8F;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x8FD0;&#x884C;&#x7684;&#x65F6;&#x5019;&#x8FD9;&#x91CC;&#x6700;&#x5148;&#x8FD0;&#x884C;
+    row_num = 5  #&#x5B9A;&#x4E49;&#x4E86;&#x6211;&#x4EEC;&#x5668;&#x4EF6;&#x7684;&#x79BB;&#x6563;&#x7F51;&#x683C;&#x6570;&#x91CF;
+    column_num = 5
+
+    mode = lumapi.MODE() #&#x901A;&#x8FC7;lumapi&#xFF0C;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x4E86;&#x4E00;&#x4E2A;mode&#x4EFF;&#x771F;&#x7A97;&#x53E3;&#xFF0C;mode&#x5C31;&#x4EE3;&#x8868;&#x4E86;&#x8FD9;&#x4E2A;&#x4EFF;&#x771F;&#x7684;&#x7A97;&#x53E3;&#x5BF9;&#x8C61;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#x90FD;&#x5F97;&#x901A;&#x8FC7;mode&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;
+
+    init_base(mode, size=(row_num, column_num)) #&#x6211;&#x4EEC;&#x5C06;mode&#x5BF9;&#x8C61;&#x548C;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x7684;&#x5668;&#x4EF6;&#x79BB;&#x6563;&#x7F51;&#x683C;&#x6570;&#x91CF;&#x4F20;&#x5165;&#x5230;&#x4E86;init_base&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5F53;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x5C31;&#x5F00;&#x59CB;&#x751F;&#x6210;&#x6211;&#x4EEC;&#x5668;&#x4EF6;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x3002;
+
+
+    #&#x4FDD;&#x5B58;&#x4E3A;&#x9879;&#x76EE;&#x6587;&#x4EF6;
+    mode.save(&quot;fdtd_files/base&quot;+str(row_num)+&quot;_&quot;+str(column_num)+&quot;.lms&quot;)
+
+    # &#x521D;&#x59CB;&#x5316;pattern
+    best_pattern_matrix = np.random.randint(0, 2, (row_num, column_num)) #&#x901A;&#x8FC7;numpy&#xFF0C;&#x6211;&#x4EEC;&#x751F;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x7684;&#x4E8C;&#x503C;&#x5316;&#x77E9;&#x9635;&#xFF0C;&#x77E9;&#x9635;&#x5927;&#x5C0F;&#x540C;&#x6837;&#x4E3A;&#x79BB;&#x6563;&#x7F51;&#x683C;&#x7684;&#x6570;&#x91CF;
+
+    change_pattern(mode,best_pattern_matrix) # change_pattern&#x51FD;&#x6570;&#x63A5;&#x6536;mode&#x5BF9;&#x8C61;&#x548C;&#x6211;&#x4EEC;&#x968F;&#x673A;&#x7684;&#x77E9;&#x9635;&#xFF0C;&#x5C06;&#x5668;&#x4EF6;&#x7ED3;&#x6784;&#x66F4;&#x6539;&#x4E3A;&#x968F;&#x673A;&#x77E9;&#x9635;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;
+
+    mode.run() #&#x5F00;&#x59CB;&#x4EFF;&#x771F;
+    a,b=get_result(mode)  #&#x4EFF;&#x771F;&#x7ED3;&#x675F;&#xFF0C;get_result&#x51FD;&#x6570;&#x4ECE;mode&#x5BF9;&#x8C61;&#x4E2D;&#x83B7;&#x53D6;&#x6211;&#x4EEC;&#x6240;&#x9700;&#x8981;&#x7684;&#x7ED3;&#x679C;&#x3002;
+
+    #&#x7ED8;&#x56FE;&#xFF0C;&#x53EF;&#x4EE5;&#x548C;&#x8F6F;&#x4EF6;&#x4E2D;&#x81EA;&#x5E26;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x6BD4;&#x8F83;&#x4E00;&#x4E0B;
+    fig, ax = plt.subplots(1)
+    ax.plot(np.arange(len(a)),a,c=&apos;r&apos;,label=&apos;T1&apos;)
+    ax.plot(np.arange(len(b)), b, c=&apos;b&apos;, label=&apos;T2&apos;)
+    plt.legend()
+    plt.show()
+</code></pre><p>&#x7ECF;&#x8FC7;main&#x51FD;&#x6570;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6253;&#x5F00;&#x4E86;&#x4E00;&#x4E2A;mode&#x4EFF;&#x771F;&#x7A97;&#x53E3;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x4E86;&#x5668;&#x4EF6;&#x7ED3;&#x6784;&#xFF0C;&#x66F4;&#x6539;&#x4E86;&#x7ED3;&#x6784;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x4E86;&#x4EFF;&#x771F;&#xFF0C;&#x6700;&#x540E;&#x5F97;&#x5230;&#x4E86;&#x4EFF;&#x771F;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;matplotlib&#x53EF;&#x89C6;&#x5316;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5BF9;&#x7A0B;&#x5E8F;&#x4E2D;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x5904;&#x7406;&#x7684;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5206;&#x6790;&#xFF1A;</p>
+<pre><code>def init_base(mode,size=(2,2)):
+    mode.switchtolayout()
+    # &#x57FA;&#x5E95;&#x751F;&#x6210;
+    # mode.importmaterialdb(&quot;fdtd_files/material.mdf&quot;)  #&#x52A0;&#x8F7D;&#x6750;&#x6599;&#x6570;&#x636E;
+    mode.addrect(x=0, y=0.0, z=-1.11e-6,x_span=2e-5,y_span=1e-5,z_span=2e-6,name=&quot;box&quot;,material=&quot;SiO2 (Glass) - Palik&quot;)
+    mode.addrect(x=0, y=0.0, z=0,x_span=2.6e-6,y_span=2.6e-6,z_span=0.22e-6,name=&quot;Si (Silicon) - Palik&quot;,material=&quot;Si (Silicon) - Palik&quot;)
+    mode.addrect(x=-5.15e-6, y=0.0, z=0, x_span=7.7e-6, y_span=0.5e-6, z_span=0.22e-6, name=&quot;in&quot;,
+                 material=&quot;Si (Silicon) - Palik&quot;)
+    mode.addrect(x=5.15e-6, y=0.75e-6, z=0, x_span=7.7e-6, y_span=0.5e-6, z_span=0.22e-6, name=&quot;out1&quot;,
+                 material=&quot;Si (Silicon) - Palik&quot;)
+    mode.addrect(x=5.15e-6, y=-0.75e-6, z=0, x_span=7.7e-6, y_span=0.5e-6, z_span=0.22e-6, name=&quot;out2&quot;,
+                 material=&quot;Si (Silicon) - Palik&quot;)
+    mode.addmesh(x=0, y=0, z=0, x_span=2.6e-6, y_span=2.6e-6, z_span=0.22e-6, name=&quot;mesh&quot;,
+                 dx=0.02e-6,dy=0.02e-6,dz=0.02e-6,)
+    mode.addvarfdtd(x=0, y=0, z=0,x_span=4e-6, y_span=4e-6, z_span=0.8e-6,simulation_time=1000e-15,x0=-1.48565e-6)
+
+    #&#x901A;&#x8FC7;OrderedDict&#x987A;&#x5E8F;&#x8BBE;&#x7F6E;&#x6A21;&#x578B;&#x53C2;&#x6570;
+    source_props = OrderedDict([(&quot;name&quot;, &quot;source&quot;), (&quot;injection axis&quot;, &quot;x&quot;),
+                         (&quot;x&quot;, -1.7e-6), (&quot;y&quot;, 0),(&quot;y span&quot;, 2e-6),
+                         (&quot;selected mode number&quot;,2),
+                         (&quot;center wavelength&quot;,1.55e-6),(&quot;wavelength span&quot;,0.2e-6),
+                         (&quot;optimize for short pulse&quot;, 1)
+                         ])
+    mode.addmodesource(properties=source_props)
+
+    # OrderedDict&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7ED9;
+    mode.addpower(properties=OrderedDict([(&quot;name&quot;, &quot;T1&quot;), (&quot;monitor type&quot;, &quot;2D X-normal&quot;),
+                                        (&quot;x&quot;, 1.45e-6), (&quot;y&quot;, 0.75e-6),(&quot;z&quot;,0),
+                                        (&quot;y span&quot;, 0.5e-6),(&quot;z span&quot;,0.4e-6),
+                                        (&quot;override global monitor settings&quot;, True),(&quot;frequency points&quot;,1)]))
+    mode.addpower(properties=OrderedDict([(&quot;name&quot;, &quot;T2&quot;), (&quot;monitor type&quot;, &quot;2D X-normal&quot;),
+                                        (&quot;x&quot;, 1.45e-6), (&quot;y&quot;, -0.75e-6),(&quot;z&quot;,0),
+                                        (&quot;y span&quot;, 0.5e-6),(&quot;z span&quot;,0.4e-6),
+                                        (&quot;override global monitor settings&quot;, True),(&quot;frequency points&quot;,1)]))
+
+
+    # pattern&#x751F;&#x6210;
+    rows, columns = size[0], size[1]
+    mode.addstructuregroup(name=&quot;666&quot;)
+    x_span = 2.6e-6 / columns
+    y_span = 2.6e-6 / rows
+    for row in range(rows):
+        for column in range(columns):
+            #&#x6A21;&#x578B;&#x5728;&#x653E;&#x7F6E;&#x4E4B;&#x540E;&#xFF0C;&#x9ED8;&#x8BA4;&#x9009;&#x62E9;&#x7684;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x578B;&#xFF0C;&#x5C31;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x91CC;&#xFF0C;&#x653E;&#x7F6E;&#x77E9;&#x5F62;&#x4E4B;&#x540E;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C06;&#x5176;&#x52A0;&#x5165;&#x5230;&#x6A21;&#x578B;&#x7EC4;&#x4E4B;&#x4E2D;&#xFF0C;&#x4E0D;&#x7528;&#x91CD;&#x65B0;&#x9009;&#x62E9;
+            mode.addrect(x=-1.3e-6 + x_span / 2 + column * x_span, x_span=x_span,
+                         y=1.3e-6 - y_span / 2 - row * y_span, y_span=y_span,
+                         z=0, z_span=0.22e-6, name=str(row) + &quot;r&quot; + str(column) + &quot;c&quot;,
+                         material=&quot;etch&quot;)
+            mode.addtogroup(&quot;666&quot;)
+</code></pre><p>&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x6CE8;&#x91CA;&#x5199;&#x7684;&#x5E94;&#x8BE5;&#x5F88;&#x8BE6;&#x7EC6;&#x4E86;&#xFF0C;&#x672C;&#x6765;&#x60F3;&#x8BF4;&#x70B9;&#x4EC0;&#x4E48;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x611F;&#x89C9;&#x8BF4;&#x4E0D;&#x51FA;&#x8BDD;&#x2026;&#x2026;&#x5404;&#x4F4D;&#x8981;&#x662F;&#x6709;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF0C;&#x8BB0;&#x5F97;&#x63D0;&#x51FA;issue&#xFF0C;&#x6211;&#x4F1A;&#x5C3D;&#x529B;&#x89E3;&#x7B54;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x662F;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code>def change_pattern(mode,pattern_matrix):
+    #&#x5148;&#x66F4;&#x6539;&#x5230;&#x5E03;&#x5C40;&#x6A21;&#x5F0F;
+    mode.switchtolayout()
+
+    #&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x53CC;&#x5411;&#x5B57;&#x5178;&#xFF0C;&#x6362;&#x6210;&#x4EBA;&#x8BDD;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x4E00;&#x5BF9;&#x4E00;&#x7684;&#x8868;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x8868;&#x6211;&#x4EEC;&#x80FD;&#x591F;&#x67E5;&#x8BE2;1&#xFF0C;0&#x548C;&#x5BF9;&#x5BF9;&#x5E94;&#x6750;&#x6599;&#x7684;&#x5173;&#x7CFB;
+    pattern_dic=bidict({
+        &quot;Si (Silicon) - Palik&quot;:1,
+        &quot;etch&quot;:0
+    })
+
+    # &#x4E24;&#x4E2A;for&#x5FAA;&#x73AF;&#x5D4C;&#x5957;&#xFF0C;&#x66F4;&#x6539;&#x6BCF;&#x4E2A;&#x79BB;&#x6563;&#x7F51;&#x683C;&#x5185;&#x90E8;&#x7684;&#x6750;&#x6599;&#xFF0C;(&#x8FD9;&#x91CC;&#x6CA1;&#x60F3;&#x5230;&#x4E00;&#x4E2A;&#x66F4;&#x4F18;&#x7F8E;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x2026;&#x2026;)
+    for row in range(pattern_matrix.shape[0]):
+        for column in range(pattern_matrix.shape[1]):
+            mode.select(&quot;666::&quot;+str(row)+&quot;r&quot;+str(column)+&quot;c&quot;)
+
+            #&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;
+            pix = mode.getObjectBySelection()
+            material_name=pix.material
+
+            #&#x6839;&#x636E;&#x76EE;&#x6807;&#x77E9;&#x9635;&#x67E5;&#x8BE2;&#x662F;&#x5426;&#x9700;&#x8981;&#x66F4;&#x6539;&#x5BF9;&#x8C61;&#x7684;&#x6750;&#x6599;
+            if pattern_dic[material_name]!=pattern_matrix[row][column]:
+                pix.material=pattern_dic.inverse[pattern_matrix[row][column]]
+
+def get_result(mode):
+    #&#x8FD9;&#x91CC;&#x7684;.squeeze()&#x65B9;&#x6CD5;&#x610F;&#x601D;&#x662F;&#x5220;&#x9664;&#x591A;&#x4F59;&#x7684;&#x7EF4;&#x5EA6;&#xFF0C;&#x5982;&#x628A;(2,3,1,3)&#x53D8;&#x4E3A;(2,3,3),&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x5904;&#x7406;
+    t1 = mode.getresult(&quot;T1&quot;, &quot;E&quot;)[&quot;E&quot;].squeeze()
+    t2 = mode.getresult(&quot;T2&quot;, &quot;E&quot;)[&quot;E&quot;].squeeze()
+    #&#x8FD9;&#x91CC;a,b&#x662F;&#x4E24;&#x4E2A;&#x76D1;&#x89C6;&#x5668;&#x7684;&#x7535;&#x573A;&#x5E45;&#x503C;&#xFF0C;&#x5373;xyz&#x65B9;&#x5411;&#x7684;&#x5E73;&#x65B9;&#x76F8;&#x52A0;&#x5F00;&#x6839;
+    a = np.sqrt(np.sum(np.power(np.abs(t1), 2), axis=1))
+    b = np.sqrt(np.sum(np.power(np.abs(t2), 2), axis=1))
+    return a,b
+</code></pre><p>&#x5E94;&#x8BE5;&#x633A;&#x7B80;&#x5355;&#x7684;&#x2026;&#x2026;&#x4E5F;&#x8BF4;&#x4E0D;&#x51FA;&#x4EC0;&#x4E48;&#x8BDD;&#x2026;&#x2026;</p>
+<h2 id="&#x7ED3;&#x8BED;">&#x7ED3;&#x8BED;</h2>
+<p>&#x6839;&#x636E;lumerical&#x5B98;&#x65B9;&#x7684;&#x8BF4;&#x6CD5;&#xFF0C;python&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x4ED6;&#x4EEC;&#x81EA;&#x5E26;&#x7684;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x548C;&#x547D;&#x540D;&#x90FD;&#x76F8;&#x540C;&#xFF0C;&#x5982;python&#x4E2D;&#x7684;<code>fdtd.addpower()</code>&#x5BF9;&#x5E94;&#x811A;&#x672C;&#x8BED;&#x8A00;&#x4E2D;&#x7684;<code>addpower;</code> <a href="https://support.lumerical.com/hc/en-us/articles/360034404534-addpower" target="_blank">https://support.lumerical.com/hc/en-us/articles/360034404534-addpower</a></p>
+<p>&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x65B9;&#x6CD5;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="&#x9644;&#x5F55;.html#how2find">&#x5173;&#x4E8E;&#x51FD;&#x6570;&#x3001;&#x65B9;&#x6CD5;&#x7684;&#x67E5;&#x8BE2;</a></p>
 
                                 
                                 </section>
@@ -457,7 +614,7 @@ if __name__ == &apos;__main__&apos;:
                 </a>
                 
                 
-                <a href="附录.html#pipinstall" class="navigation navigation-next " aria-label="Next page: 关于python中的包管理">
+                <a href="例程.html#what_happend" class="navigation navigation-next " aria-label="Next page: 发生了什么？">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -468,7 +625,7 @@ if __name__ == &apos;__main__&apos;:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"例程:简单的例子","level":"3.1","depth":1,"next":{"title":"关于python中的包管理","level":"4.1","depth":1,"anchor":"#pipinstall","path":"附录.md","ref":"附录.md#pipinstall","articles":[{"title":"更换下载源","level":"4.1.1","depth":2,"anchor":"#change_source","path":"附录.md","ref":"附录.md#change_source","articles":[]},{"title":"包安装方式","level":"4.1.2","depth":2,"anchor":"#install","path":"附录.md","ref":"附录.md#install","articles":[]}]},"previous":{"title":"结语","level":"2.1.4","depth":2,"anchor":"#结尾","path":"安装.md","ref":"安装.md#结尾","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git","katex@git+https://github.com/gaoxiaosong/plugin-katex.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Glider","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"例程.md","mtime":"2021-01-06T08:01:49.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-06T08:02:36.688Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"例程:简单的例子","level":"3.1","depth":1,"next":{"title":"发生了什么？","level":"3.1.1","depth":2,"anchor":"#what_happend","path":"例程.md","ref":"例程.md#what_happend","articles":[]},"previous":{"title":"结语","level":"2.1.4","depth":2,"anchor":"#结尾","path":"安装.md","ref":"安装.md#结尾","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-sharing","theme-simple@git+https://github.com/plugins-zander/gitbook-plugin-theme-simple.git","search-pro@git+https://github.com/plugins-zander/gitbook-plugin-search-pro.git","splitter@git+https://github.com/plugins-zander/gitbook-plugin-splitter.git","chapter-fold@git+https://github.com/plugins-zander/gitbook-plugin-chapter-fold.git","copy-code-button@git+https://github.com/plugins-zander/gitbook-plugin-copy-code-button.git","katex@git+https://github.com/gaoxiaosong/plugin-katex.git"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-simple":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Glider","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Gitbook-Action","gitbook":"3.2.3","description":"Gitbook-Action"},"file":{"path":"例程.md","mtime":"2021-01-06T08:48:03.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-01-06T08:48:52.181Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
