@@ -12,9 +12,12 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      search: 'auto',
+      
       coverpage: true,
       loadSidebar: true,
+      search: {
+        paths: 'auto',
+      },
       name: '教程',
       auto2top: true,
       subMaxLevel: 2,
@@ -28,11 +31,9 @@
     }
   </script>
 
+
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <!-- 搜索 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <!-- latex插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
