@@ -15,7 +15,9 @@ jobs:
    bump:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - uses: tool3/docsify-action@master
       with:      
-        github_token: ${{ secrets.PERSONAL_TOKEN }}  
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        branch：main
+        dir: docs
+
