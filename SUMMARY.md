@@ -15,7 +15,6 @@
 * [例程:简单的例子](例程.md#ladder)
   *  [发生了什么？](例程.md#what_happend)
 
-s
 ### 附录
 
 * [关于python中的包管理](附录.md#pipinstall)
