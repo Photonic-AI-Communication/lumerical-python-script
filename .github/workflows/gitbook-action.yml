@@ -12,15 +12,10 @@ on:
         required: true
         default: 'Mona the Octocat'
 jobs:
-  build:
+   bump:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout action
-      uses: actions/checkout@v2
-    - name: Gitbook Action                    # https://github.com/ZanderZhao/gitbook-action/releases
-      uses: ZanderZhao/gitbook-action@master # -> or ZanderZhao/gitbook-action@master.If not use master click above, use latest please 
-      with:                                   #    or fork this repo and use YourName/gitbook-action@master
-        token: ${{ secrets.PERSONAL_TOKEN }}  # -> remember add this in settings/secrets as following
-        time_zone: Asia/Shanghai
-        source_branch: main
-        source_edit_time: true
+    - uses: actions/checkout@master
+    - uses: tool3/docsify-action@master
+      with:      
+        github_token: ${{ secrets.PERSONAL_TOKEN }}  
