@@ -18,6 +18,5 @@ jobs:
     - uses: tool3/docsify-action@master
       with:      
         github_token: ${{ secrets.PERSONAL_TOKEN }}
-        branch：main
         dir: docs
 
