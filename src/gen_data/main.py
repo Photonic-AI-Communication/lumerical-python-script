@@ -121,8 +121,9 @@ for i in range(2):
         mode.load(currentfilename)
         t1 = mode.getresult("M1", "expansion for input")["T_forward"].squeeze()
         fileds.append(
-            np.concatenate([mode.getresult("all", "E")["E"].squeeze(), mode.getresult("all", "H")["H"].squeeze()],
-                           axis=2))
+            np.einsum("ijk->jik",np.concatenate(
+                                    [mode.getresult("all", "E")["E"].squeeze(), mode.getresult("all", "H")["H"].squeeze()]
+                                    ,axis=2))[:51,:])
 
 
 
